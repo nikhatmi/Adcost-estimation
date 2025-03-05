@@ -41,13 +41,13 @@ st.dataframe(data.head())
 col1,col2,col3,col4 = st.columns(4)
 
 with col1:
-    clicks= st.number_input("Enter no.of Clicks")
+    clicks= st.number_input("Enter no.of Clicks", value=0, placeholder=" ")
 with col2: 
-    impressions= st.number_input("Enter no.of Impressions")
+    impressions= st.number_input("Enter no.of Impressions",value=0, placeholder=" ")
 with col3: 
-    ctr= st.number_input("Enter no.of CTR(%)") 
+    ctr= st.number_input("Enter no.of CTR(%)",value=None, placeholder=" ") 
 with col4: 
-    conversions= st.number_input("Enter no.of Conversions")          
+    conversions= st.number_input("Enter no.of Conversions",value=0, placeholder=" ")          
 
 col5,col6 = st.columns(2)
 with col5:
@@ -80,5 +80,5 @@ if st.button("Estimate"):
 
     Cost = round(model.predict(row)[0],2)
     
-    st.write(f"Estimated AdCost Value: {Cost}")
+    st.write(f"Estimated AdCost Value: {Cost}Rs")
 
